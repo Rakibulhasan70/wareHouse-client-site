@@ -18,7 +18,7 @@ const Inventories = () => {
                 }
 
             </div>
-            <p className='text-center mt-4 showing-btn'> <Link to='/manageinventory' >Show All Products</Link></p>
+            <p className='text-center mt-4'> <Link style={{ fontFamily: 'cursive' }} to='/manageinventory' >Show All Products</Link></p>
         </div>
     );
 };
