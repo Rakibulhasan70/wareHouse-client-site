@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import login from '../../image/form/login.png'
 import 'react-toastify/dist/ReactToastify.css';
@@ -10,6 +10,8 @@ const Login = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const navigate = useNavigate();
+    const location = useLocation()
+
 
     const handleEmailBlur = e => {
         setEmail(e.target.value)
@@ -27,6 +29,12 @@ const Login = () => {
 
     if (user) {
         navigate('/home')
+    }
+
+    const from = location.state?.from?.pathname || "/";
+
+    if (user) {
+        navigate(from, { replace: true });
     }
 
 
