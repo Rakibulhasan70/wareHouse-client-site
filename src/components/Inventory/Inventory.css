@@ -1,0 +1,7 @@
+.product-details img {
+    width: 200px;
+}
+
+.product-details {
+    box-shadow: 0 0 10px lightgrey;
+}

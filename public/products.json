@@ -1,0 +1,83 @@
+[
+    {
+        "id": "1",
+        "name": "laptop",
+        "price": "1000",
+        "quantity": "4",
+        "supplierName": "sohag",
+        "img": "https://i.ibb.co/7R8kLnc/product1.jpg",
+        "description": "Esther Rojas"
+    },
+    {
+        "id": "2",
+        "name": "laptop",
+        "price": "1000",
+        "quantity": "4",
+        "supplierName": "sohag",
+        "img": "https://i.ibb.co/7R8kLnc/product1.jpg",
+        "description": "Moss Stone"
+    },
+    {
+        "id": "3",
+        "name": "laptop",
+        "price": "1000",
+        "quantity": "4",
+        "supplierName": "sohag",
+        "img": "https://i.ibb.co/7R8kLnc/product1.jpg",
+        "description": "Sullivan Kirkland"
+    },
+    {
+        "id": "4",
+        "name": "laptop",
+        "price": "1000",
+        "quantity": "4",
+        "supplierName": "sohag",
+        "img": "https://i.ibb.co/7R8kLnc/product1.jpg",
+        "description": "Deena King"
+    },
+    {
+        "id": "5",
+        "name": "laptop",
+        "price": "1000",
+        "quantity": "4",
+        "supplierName": "sohag",
+        "img": "https://i.ibb.co/7R8kLnc/product1.jpg",
+        "description": "Parrish Klein"
+    },
+    {
+        "id": "6",
+        "name": "laptop",
+        "price": "1000",
+        "quantity": "4",
+        "supplierName": "sohag",
+        "img": "https://i.ibb.co/7R8kLnc/product1.jpg",
+        "description": "Terry Atkins"
+    },
+    {
+        "id": "7",
+        "name": "laptop",
+        "price": "1000",
+        "quantity": "4",
+        "supplierName": "sohag",
+        "img": "https://i.ibb.co/7R8kLnc/product1.jpg",
+        "description": "Whitfield Cooley"
+    },
+    {
+        "id": "8",
+        "name": "laptop",
+        "price": "1000",
+        "quantity": "4",
+        "supplierName": "sohag",
+        "img": "https://i.ibb.co/7R8kLnc/product1.jpg",
+        "description": "Angelina Gillespie"
+    },
+    {
+        "id": "9",
+        "name": "laptop",
+        "price": "1000",
+        "quantity": "4",
+        "supplierName": "sohag",
+        "img": "https://i.ibb.co/7R8kLnc/product1.jpg",
+        "description": "Angelina Gillespie"
+    }
+]
