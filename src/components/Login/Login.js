@@ -5,6 +5,7 @@ import auth from '../../firebase.init';
 import login from '../../image/form/login.png'
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer, toast } from 'react-toastify';
+import Social from '../Social/Social';
 
 const Login = () => {
     const [email, setEmail] = useState('')
@@ -70,15 +71,15 @@ const Login = () => {
                     <p>You have no Account?   <Link to='/register'>Please Register</Link></p>
                     <p>Forget Password? <button className='ps-0 btn btn-link text-primary ' onClick={handleResetPassword}>Reset Password</button></p>
                 </div>
+                <Social></Social>
                 <div className="col col-lg-6 col-12">
                     <div className='mt-5  '>
                         <img className='img-fluid rounded-2' src={login} alt="" />
                     </div>
                 </div>
             </div>
+
             <ToastContainer />
-
-
         </div>
     );
 };

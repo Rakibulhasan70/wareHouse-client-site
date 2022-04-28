@@ -4,6 +4,7 @@ import registration from '../../image/form/registraton.png'
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import Social from '../Social/Social';
 
 const Register = () => {
     const [email, setEmail] = useState('')
@@ -64,7 +65,9 @@ const Register = () => {
                         <input style={{ backgroundColor: 'lightblue', fontSize: '18px' }} type="submit" value="Register" />
                     </form>
                     {errorMessage}
+
                     <p>Already have an account?   <Link to='/login'>Please Login</Link></p>
+                    <Social></Social>
                 </div>
                 <div className="col col-lg-6 col-12">
                     <div className='mt-5  '>
@@ -72,7 +75,6 @@ const Register = () => {
                     </div>
                 </div>
             </div>
-
 
         </div>
     );
