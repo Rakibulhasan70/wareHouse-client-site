@@ -1,25 +1,24 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import UseProducts from '../../Hook/UseProducts';
 import Inventory from '../Inventory/Inventory';
 import './Inventories.css'
 
 const Inventories = () => {
-    const [products, setProducts] = useState([])
-    useEffect(() => {
-        fetch('products.json')
-            .then(res => res.json())
-            .then(data => setProducts(data))
-    }, [])
+    const [products, setProducts] = UseProducts()
     return (
         <div className='container mt-5 mb-5'>
             <h2 className='text-center'> My Inventory</h2>
             <div className='products '>
                 {
-                    products.map(inventory => <Inventory
+                    products.slice(0, 6).map(inventory => <Inventory
                         key={inventory.id}
                         inventory={inventory}
                     ></Inventory>)
                 }
+
             </div>
+            <p className='text-center mt-4 showing-btn'> <Link to='/manageinventory' >Show All Products</Link></p>
         </div>
     );
 };
