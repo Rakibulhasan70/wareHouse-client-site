@@ -27,7 +27,7 @@ const Register = () => {
         user,
         loading,
         error,
-    ] = useCreateUserWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
     let errorMessage;
 
@@ -57,9 +57,9 @@ const Register = () => {
                     <h2 className='mt-3 text-center' style={{ color: 'purple' }}> Register Form</h2>
                     <form onSubmit={handleSubmitForm} className='form-register'>
                         <input type="text" placeholder='Name' />
-                        <input onBlur={handleEmailBlur} type="email" name="email" id="" placeholder='Enter your email' />
-                        <input onBlur={handlePasswordBlur} type="password" name="password" id="" placeholder='Password' />
-                        <input onBlur={handleConfirmPassBlur} type="password" name="ConfirmPassword" id="" placeholder='Confirm Password' />
+                        <input onBlur={handleEmailBlur} type="email" name="email" id="" placeholder='Enter your email' required />
+                        <input onBlur={handlePasswordBlur} type="password" name="password" id="" placeholder='Password' required />
+                        <input onBlur={handleConfirmPassBlur} type="password" name="ConfirmPassword" id="" placeholder='Confirm Password' required />
                         <p><small className='text-danger'>{customError}</small></p>
                         <input style={{ backgroundColor: 'lightblue', fontSize: '18px' }} type="submit" value="Register" />
                     </form>
