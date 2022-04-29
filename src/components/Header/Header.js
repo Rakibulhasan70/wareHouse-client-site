@@ -14,7 +14,7 @@ const Header = () => {
     }
 
     return (
-        <div>
+        <>
             <Navbar collapseOnSelect expand="lg" style={{ backgroundColor: 'darkcyan' }} variant="dark" sticky='top'>
                 <Container>
                     <Navbar.Brand as={Link} to="/home"><img height='30px' style={{ borderRadius: '5px' }} src={logo} alt="" /></Navbar.Brand>
@@ -25,6 +25,7 @@ const Header = () => {
 
                         </Nav>
                         <Nav>
+                            <Nav.Link as={Link} to="/blog">Blog</Nav.Link>
                             <Nav.Link as={Link} to="/register">Register</Nav.Link>
                             {
                                 user
@@ -43,7 +44,7 @@ const Header = () => {
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
-        </div>
+        </>
     );
 };
 
