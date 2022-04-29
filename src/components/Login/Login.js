@@ -33,6 +33,18 @@ const Login = () => {
         navigate('/home')
     }
 
+    let errorMessage;
+
+    if (error) {
+        errorMessage =
+            <p className='text-danger'>Error: {error?.message}</p>
+    }
+
+
+    if (loading) {
+        <Loading></Loading>
+    }
+
     const from = location.state?.from?.pathname || "/";
 
     if (user) {
@@ -69,6 +81,7 @@ const Login = () => {
                         <input onBlur={handlePasswordBlur} type="password" name="password" id="" placeholder='Password' required />
                         <input style={{ backgroundColor: 'lightblue', fontSize: '18px' }} type="submit" value="Login" />
                     </form>
+                    {errorMessage}
                     <p>You have no Account?   <Link to='/register'>Please Register</Link></p>
                     <p>Forget Password? <button className='ps-0 btn btn-link text-primary ' onClick={handleResetPassword}>Reset Password</button></p>
                     <Social></Social>
@@ -81,7 +94,6 @@ const Login = () => {
                 </div>
             </div>
             <ToastContainer />
-            <Loading></Loading>
         </div>
     );
 };

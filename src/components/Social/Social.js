@@ -11,7 +11,7 @@ const Social = () => {
         navigate('/home')
     }
     return (
-        <div>
+        <div className='w-50 mx-auto mb-3'>
             <button
                 onClick={() => signInWithGoogle()}
                 className='btn btn-success  my-2'>
