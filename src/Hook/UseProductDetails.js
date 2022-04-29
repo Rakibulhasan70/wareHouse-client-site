@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 const UseProductDetails = productId => {
-    const [products, setProducts] = useState([])
+    const [products, setProducts] = useState([]);
     useEffect(() => {
         const url = `http://localhost:5000/product/${productId}`
         fetch(url)
