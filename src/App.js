@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import Add from './components/Add/Add';
 import Blog from './components/Blog/Blog';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
@@ -24,6 +25,7 @@ function App() {
             <ManageInventory></ManageInventory>
           </RequireAuth>
         }></Route>
+        <Route path='/add' element={<Add></Add>}></Route>
         <Route path='/invoice/:invoiceId' element={
           <RequireAuth>
             <Invoice></Invoice>

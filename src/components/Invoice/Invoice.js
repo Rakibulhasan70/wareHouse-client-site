@@ -1,18 +1,25 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
-// import UseProducts from '../../Hook/UseProducts';
+import UseProductDetails from '../../Hook/UseProductDetails';
 
 const Invoice = () => {
     const { invoiceId } = useParams()
-    // const [products] = UseProducts(invoiceId)
-    // console.log(products);
+    const [products] = UseProductDetails(invoiceId)
+
     return (
-        <div className='container mt-3'>
-            <h2>Invoice:{invoiceId}</h2>
-            <h2>name:{invoiceId.name}</h2>
+        <div className='container mt-3 mb-5'>
+            <h5>ProducID:{invoiceId}</h5>
+            <div className='w-50 mx-auto'>
+                <img width='200px' src={products.img} alt="" />
+                <h5>Name : {products.name}</h5>
+                <p className='mb-0'>Description : {products.description}</p>
+                <p className='mb-0'>price :{products.price}</p>
+                <p className='mb-0'>Quantity : {products.quantity}</p>
+                <p>supplier Name : {products.supplierName}</p>
+            </div>
 
 
-            <Link to='/manageinventory'>Go to Manage Inventory page</Link>
+            <Link to='/manageinventory'><span >Go to Manage Inventory page</span></Link>
         </div>
     );
 };

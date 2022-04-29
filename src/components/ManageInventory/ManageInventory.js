@@ -10,7 +10,7 @@ const ManageInventory = () => {
             <div className="products">
                 {
                     products.map(product => <ManageInventoryDetails
-                        key={product.id}
+                        key={product._id}
                         product={product}
                     >
 
