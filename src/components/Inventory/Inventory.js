@@ -5,7 +5,7 @@ import './Inventory.css'
 const Inventory = (props) => {
     const { id, name, img, description, price, supplierName } = props.inventory;
     const navigate = useNavigate();
-    const handleInventory = () => {
+    const handleInventory = id => {
         navigate(`/invoice/${id}`)
     }
     return (
