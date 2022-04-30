@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import UseProductDetails from '../../Hook/UseProductDetails';
 
@@ -7,13 +7,12 @@ const Invoice = () => {
     let [products] = UseProductDetails(invoiceId)
     console.log(products);
 
-
+    // reload page 
     function refreshPage() {
         window.location.reload();
     }
 
-    // const [quantitys, setQuantitys] = useState(10)
-
+    // delioverd and delete item
     const handleDelivered = () => {
 
         let { quantity, name, description, price, img, supplierName } = products;
@@ -24,6 +23,31 @@ const Invoice = () => {
             console.log(products);
         }
 
+        const url = `http://localhost:5000/product/${invoiceId}`
+        fetch(url, {
+            method: 'PUT',
+            headers: {
+                'content-Type': 'application/json'
+            },
+            body: JSON.stringify(products),
+        })
+            .then(res => res.json())
+            .then(data => {
+                refreshPage()
+                console.log(data)
+            })
+    }
+
+    // input diye quantity increase
+    const handleUpdate = e => {
+        const number = e.target.number.value;
+        let { quantity, name, description, price, img, supplierName } = products;
+
+        if (quantity > 0) {
+            quantity = parseInt(quantity) + parseInt(number);
+            products = { quantity, name, description, price, img, supplierName }
+            console.log(products);
+        }
 
         const url = `http://localhost:5000/product/${invoiceId}`
         fetch(url, {
@@ -36,18 +60,13 @@ const Invoice = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
-                alert('qantity updated')
-                refreshPage()
-
             })
-
-
     }
 
     return (
         <div className='container mt-3 mb-5'>
             <h5>ProducID:{invoiceId}</h5>
-            <div style={{ boxShadow: "0 0 10px lightgrey" }} className='w-50  mx-auto mt-4'>
+            <div style={{ boxShadow: "0 0 10px lightgrey" }} className='w-50  mx-auto mt-4 '  >
                 <div className='w-50 mx-auto mb-5 pb-3'>
                     <img width='200px' src={products.img} alt="" />
                     <h5>Name : {products.name}</h5>
@@ -55,8 +74,14 @@ const Invoice = () => {
                     <p className='mb-0'>price :{products.price}</p>
                     <p className='mb-0'>Quantity : {products.quantity}</p>
                     <p>supplier Name : {products.supplierName}</p>
-                    <button onClick={handleDelivered} style={{ background: 'lightcyan', borderRadius: '5px' }} className='border-1'>Delivered</button>
+                    <button onClick={handleDelivered} style={{ background: 'lightcyan', borderRadius: '5px' }} className='border-1 '>Delivered</button>
+
                 </div>
+                <h5 className='text-center'>Enter the Added Number</h5>
+                <form onSubmit={handleUpdate} className='d-flex w-50 mx-auto pb-5 '>
+                    <input type="number" name="number" id="" placeholder='digit' />
+                    <input className='bg-info border-1 rounded' type="submit" value="Add" />
+                </form>
             </div>
 
 
