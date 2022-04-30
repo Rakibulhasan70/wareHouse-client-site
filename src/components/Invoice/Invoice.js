@@ -4,12 +4,43 @@ import UseProductDetails from '../../Hook/UseProductDetails';
 
 const Invoice = () => {
     const { invoiceId } = useParams()
-    const [products] = UseProductDetails(invoiceId)
+    let [products] = UseProductDetails(invoiceId)
+    console.log(products);
 
-    const [quantitys, setQuantitys] = useState(1)
+
+    function refreshPage() {
+        window.location.reload();
+    }
+
+    // const [quantitys, setQuantitys] = useState(10)
+
     const handleDelivered = () => {
-        const newQuantitys = quantitys + 1;
-        setQuantitys(newQuantitys)
+
+        let { quantity, name, description, price, img, supplierName } = products;
+
+        if (quantity > 0) {
+            quantity = quantity - 1;
+            products = { quantity, name, description, price, img, supplierName }
+            console.log(products);
+        }
+
+
+        const url = `http://localhost:5000/product/${invoiceId}`
+        fetch(url, {
+            method: 'PUT',
+            headers: {
+                'content-Type': 'application/json'
+            },
+            body: JSON.stringify(products),
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                alert('qantity updated')
+                refreshPage()
+
+            })
+
 
     }
 
@@ -22,7 +53,7 @@ const Invoice = () => {
                     <h5>Name : {products.name}</h5>
                     <p className='mb-0'>Description : {products.description}</p>
                     <p className='mb-0'>price :{products.price}</p>
-                    <p className='mb-0'>Quantity : {quantitys}</p>
+                    <p className='mb-0'>Quantity : {products.quantity}</p>
                     <p>supplier Name : {products.supplierName}</p>
                     <button onClick={handleDelivered} style={{ background: 'lightcyan', borderRadius: '5px' }} className='border-1'>Delivered</button>
                 </div>

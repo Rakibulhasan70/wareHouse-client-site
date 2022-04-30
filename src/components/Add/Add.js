@@ -15,7 +15,10 @@ const Add = () => {
             body: JSON.stringify(data)
         })
             .then(res => res.json())
-            .then(result => console.log(result))
+            .then(result => {
+                console.log(result)
+                alert('user added successfully!!')
+            })
     };
 
     return (
@@ -23,7 +26,7 @@ const Add = () => {
             <h2 className='text-center mt-3 mb-4'>Add to Your Product</h2>
             <form className='d-flex flex-column' onSubmit={handleSubmit(onSubmit)}>
                 <input {...register("name")} type="text" placeholder="Name" />
-                <textarea className='mb-2 mt-2' {...register("Description")} type="text" placeholder="Description" />
+                <textarea className='mb-2 mt-2' {...register("description")} placeholder="Description" />
                 <input className='mb-2 ' type="number" {...register("price",)} placeholder="Price" />
                 <input className='mb-2 ' {...register("name")} type="text" placeholder="Supplier Name" />
                 <input className='mb-2 ' placeholder='Photo URL' type="text" {...register("img")} />
