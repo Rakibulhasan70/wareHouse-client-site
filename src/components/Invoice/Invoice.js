@@ -4,13 +4,9 @@ import UseProductDetails from '../../Hook/UseProductDetails';
 
 const Invoice = () => {
     const { invoiceId } = useParams()
-    let [products] = UseProductDetails(invoiceId)
+    let [products] = UseProductDetails(invoiceId);
     console.log(products);
 
-    // reload page 
-    function refreshPage() {
-        window.location.reload();
-    }
 
     // delioverd and delete item
     const handleDelivered = () => {
@@ -33,13 +29,14 @@ const Invoice = () => {
         })
             .then(res => res.json())
             .then(data => {
-                refreshPage()
                 console.log(data)
             })
     }
 
     // input diye quantity increase
     const handleUpdate = e => {
+        e.preventDefault()
+
         const number = e.target.number.value;
         let { quantity, name, description, price, img, supplierName } = products;
 

@@ -10,10 +10,6 @@ const ManageInventoryDetails = (props) => {
         navigate('/add')
     }
 
-    // page realod function
-    function refreshPage() {
-        window.location.reload();
-    }
     // delete section
     const [products, setProducts] = UseProducts()
     const handleDeleteBtn = id => {
@@ -29,7 +25,6 @@ const ManageInventoryDetails = (props) => {
                     console.log(data)
                     const remainingItem = products.filter(product => product._id !== id)
                     setProducts(remainingItem)
-                    refreshPage()
                 })
 
         }
@@ -46,13 +41,6 @@ const ManageInventoryDetails = (props) => {
             <p className='mt-0 mb-3'> Supplier: {supplierName}</p>
             <button onClick={handleAddItem} className='btn btn-success mb-3 me-5'>Add</button>
             <button onClick={() => handleDeleteBtn(_id)} className='btn btn-danger mb-3 ms-3'>Delete</button>
-
-
-            {/* onClick={() => handleDeleteBtn(product._id)} */}
-            {/* {
-                products.map(product => )
-
-            } */}
 
         </div>
     );
