@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
@@ -23,8 +24,20 @@ const Add = () => {
             .then(result => {
                 console.log(result)
                 alert('user added successfully!!')
-            })
+            });
+
+
+        // axios.post('http://localhost:5000/added', data)
+        //     .then(response => {
+        //         console.log(response);
+        //         const { data } = response;
+        //         if (data.insertedId) {
+        //             console.log(data.insertedId);
+        //         }
+        //     })
     };
+
+
 
     return (
         <div className='w-50 mx-auto'>
