@@ -1,26 +1,35 @@
-// import axios from 'axios';
-// import React, { useEffect, useState } from 'react';
-// import { useAuthState } from 'react-firebase-hooks/auth';
-// import auth from '../../firebase.init';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 
-// const MyItems = () => {
-//     const [user] = useAuthState(auth)
-//     const [products, setproducts] = useState([])
-//     useEffect(() => {
-//         const getProducts = async () => {
-//             const email = user.email;
-//             const url = `http://localhost:5000/product?email=${email}`
-//             const { data } = await axios.get(url);
-//             setproducts(data)
-//         }
-//         getProducts()
+const MyItems = () => {
+    const [user] = useAuthState(auth)
+    const email = user?.email
 
-//     }, [user])
-//     return (
-//         <div>
-//             <h2>MyItems:{products.length}</h2>
-//         </div>
-//     );
-// };
+    const [products, setProduct] = useState([])
+    console.log(products);
+    useEffect(() => {
 
-// export default MyItems;
+        const run = async () => {
+            // const url =`http://localhost:5000/order?email=${email}`
+            // const {data}=await axios.get(url)
+
+            // setProduct(data)
+            await axios
+                .get(`http://localhost:5000/myItem/${email}`)
+                .then(function (res) {
+                    setProduct(res.data)
+                })
+
+        }
+        run()
+    }, [email])
+    return (
+        <div>
+            <h2>{products.length}</h2>
+        </div>
+    );
+};
+
+export default MyItems;
