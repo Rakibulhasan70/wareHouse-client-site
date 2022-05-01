@@ -1,4 +1,4 @@
-import axios from 'axios';
+
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
@@ -26,21 +26,23 @@ const Add = () => {
                 alert('user added successfully!!')
             });
 
-
-        // axios.post('http://localhost:5000/added', data)
-        //     .then(response => {
-        //         console.log(response);
-        //         const { data } = response;
-        //         if (data.insertedId) {
-        //             console.log(data.insertedId);
-        //         }
-        //     })
     };
 
 
 
     return (
         <div className='w-50 mx-auto'>
+            {/* <form>
+                <input type="text" name='name' placeholder='name' />
+                <input type="email" name="email" id="" placeholder='Email' />
+                <input type="text" name='productName' placeholder='Product Name' />
+                <input type="number" name="price" id="" placeholder='Price' />
+                <input type="text" name='description' placeholder='Description' />
+                <input type="number" name="quantity" id="" placeholder='Quantity ' />
+                <input type="image url" name='image' placeholder='Image' />
+            </form> */}
+
+
             <h2 className='text-center mt-3 mb-4'>Add to Your Product</h2>
             <form className='d-flex flex-column' onSubmit={handleSubmit(onSubmit)}>
 

@@ -6,7 +6,7 @@ const ManageInventory = () => {
     const [products, setProducts] = UseProducts()
     return (
         <div className='container'>
-            <h2 className='text-center mt-5 mb-5'> My ManageInventory</h2>
+            <h2 className='text-center mt-5 mb-5'> My ManageInventory : {products.length}</h2>
             <div className="products">
                 {
                     products.map(product => <ManageInventoryDetails
