@@ -7,6 +7,7 @@ import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import Home from './components/Home/Home';
 import Invoice from './components/Invoice/Invoice';
+import Loading from './components/Loading/Loading';
 import Login from './components/Login/Login';
 import ManageInventory from './components/ManageInventory/ManageInventory';
 import MyItems from './components/MyItems/MyItems';
@@ -38,6 +39,7 @@ function App() {
         <Route path='/blog' element={<Blog></Blog>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
+      <Loading></Loading>
       <Footer></Footer>
     </div>
   );

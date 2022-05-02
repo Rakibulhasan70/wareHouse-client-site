@@ -58,7 +58,7 @@ const Register = () => {
     return (
         <div className='container'>
             <div className="row">
-                <div className="col col-lg-6 col-12">
+                <div className="col col-lg-6 col-12 ">
                     <h2 className='mt-3 text-center' style={{ color: 'purple' }}> Register Form</h2>
                     <form onSubmit={handleSubmitForm} className='form-register'>
                         <input type="text" placeholder='Name' />
@@ -73,7 +73,7 @@ const Register = () => {
                     <p>Already have an account?   <Link to='/login'>Please Login</Link></p>
                     <Social></Social>
                 </div>
-                <div className="col col-lg-6 col-12">
+                <div className="col col-lg-6 col-12 ">
                     <div className='mt-5  '>
                         <img className='img-fluid rounded-2' src={registration} alt="" />
                     </div>

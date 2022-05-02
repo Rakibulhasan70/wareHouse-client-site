@@ -16,6 +16,7 @@ const OfferDetails = (props) => {
                 <p className='mb-0'>Quantity :{quantity}</p>
                 <p className='mb-3'> Supplier: {supplierName}</p>
             </div >
+
         </div>
     );
 };
