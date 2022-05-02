@@ -28,7 +28,7 @@ const MyItemDetails = (props) => {
     return (
         <div className='myitemdetails container '>
             <div className='ps-2 mt-2'>
-                <img src={picture} alt="" />
+                <img className='w-50 mx-auto' src={picture} alt="" />
                 <p> Supplier Name: {supplierName ? supplierName : 'undefined'}</p>
                 <p>Quantity: {quantity ? quantity : 'undefined'}</p>
                 <p>Price: {price ? price : 'undefined'}</p>
