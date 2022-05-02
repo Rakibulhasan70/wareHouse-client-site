@@ -6,8 +6,12 @@ My Electronic Grocery
 This is  My Electronic Grocery website. In this wesite i was showing my all products which is very qualityful. And i also showoing some speciall offer prodcuts. If you are not login you can not show all products and order some products and update.But if you are try to login with fake token i can not permission to you for login. Overall this is my simple grocery website.
 
 ### The extra feature about my project
-- you can not login for fake token data or expired data.
-- 
+- You can not login with fake token data or expired data.
+- We provide us for many extra services.
+- For few days you can buy product with some discount.
+- If you are login you can increaseing and reducing your product quantity.
+- You aslo delete your selected item which you don't need.
+- You can reset your forget password.
 
 
 

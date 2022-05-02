@@ -36,7 +36,7 @@ const MyItems = () => {
             }
         }
         run()
-    }, [email, products])
+    }, [email])
 
     return (
         <div className='w-50 mx-auto mt-3 mb-5'>
