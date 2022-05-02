@@ -17,7 +17,7 @@ const MyItems = () => {
     useEffect(() => {
 
         const run = async () => {
-            const url = `http://localhost:5000/myItem/${email}`
+            const url = `https://floating-bastion-64213.herokuapp.com/myItem/${email}`
             try {
                 await axios.get(url, {
                     headers: {

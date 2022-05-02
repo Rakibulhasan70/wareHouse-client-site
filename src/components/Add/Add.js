@@ -32,7 +32,7 @@ const Add = () => {
         const newProduct = {
             ...product, email: email
         }
-        await axios.post('http://localhost:5000/addItem', newProduct)
+        await axios.post('https://floating-bastion-64213.herokuapp.com/addItem', newProduct)
             .then(function (res) {
                 if (res?.data?.insertedId) {
                     navigate('/myitems')

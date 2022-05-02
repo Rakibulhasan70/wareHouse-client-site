@@ -19,7 +19,7 @@ const Invoice = () => {
             console.log(products);
         }
 
-        const url = `http://localhost:5000/product/${invoiceId}`
+        const url = `https://floating-bastion-64213.herokuapp.com/product/${invoiceId}`
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -46,7 +46,7 @@ const Invoice = () => {
             console.log(products);
         }
 
-        const url = `http://localhost:5000/product/${invoiceId}`
+        const url = `https://floating-bastion-64213.herokuapp.com/product/${invoiceId}`
         fetch(url, {
             method: 'PUT',
             headers: {
