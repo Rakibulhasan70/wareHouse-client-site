@@ -27,7 +27,7 @@ const MyItemDetails = (props) => {
 
     return (
         <div className='myitemdetails container '>
-            <div className='ps-2 mt-2'>
+            <div className='ps-2 mt-2 '>
                 <img className='w-50 mx-auto' src={picture} alt="" />
                 <p> Supplier Name: {supplierName ? supplierName : 'undefined'}</p>
                 <p>Quantity: {quantity ? quantity : 'undefined'}</p>
@@ -35,7 +35,6 @@ const MyItemDetails = (props) => {
                 <p><small>Description: {description ? description : 'undefined'}</small></p>
                 <button onClick={() => handleDeleteBtn(_id)} className='btn btn-danger mb-2'>Delete</button>
             </div>
-
         </div>
     );
 };
