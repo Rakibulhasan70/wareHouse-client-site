@@ -2,7 +2,7 @@
 
 My Electronic Grocery
 
-## Got to my project link and enjoy it
+## Got to my project link and enjoy it.
 This is my project Live site link [https://assignment-11-client-a557f.web.app/](https://assignment-11-client-a557f.web.app/)to view in your browser.
 
 ## project description

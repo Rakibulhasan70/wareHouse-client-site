@@ -62,9 +62,8 @@ const Invoice = () => {
 
     return (
         <div className='container mt-3 mb-5'>
-            <h5>ProducID:{invoiceId}</h5>
-            <div style={{ boxShadow: "0 0 10px lightgrey" }} className='w-50  mx-auto mt-4 '  >
-                <div className='w-50 mx-auto mb-5 pb-3'>
+            <div className='w-50  mx-auto mt-4 row'  >
+                <div className=' mb-5 pb-3 col col-lg-12 col-12'>
                     <img width='200px' src={products.img} alt="" />
                     <h5>Name : {products.name}</h5>
                     <p className='mb-0'>Description : {products.description}</p>
@@ -74,11 +73,13 @@ const Invoice = () => {
                     <button onClick={handleDelivered} style={{ background: 'lightcyan', borderRadius: '5px' }} className='border-1 '>Delivered</button>
 
                 </div>
-                <h5 className='text-center'>Enter the Added Number</h5>
-                <form onSubmit={handleUpdate} className='d-flex w-50 mx-auto pb-5 '>
-                    <input type="number" name="number" id="" placeholder='digit' />
-                    <input className='bg-info border-1 rounded' type="submit" value="Add" />
-                </form>
+                <div className='col col-lg-12 col-12'>
+                    <h5 >Enter the Added Number</h5>
+                    <form onSubmit={handleUpdate} className='d-flex pb-5 '>
+                        <input type="number" name="number" id="" placeholder='digit' />
+                        <input className='bg-info border-1 rounded' type="submit" value="Add" />
+                    </form>
+                </div>
             </div>
 
 
