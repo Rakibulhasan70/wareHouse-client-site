@@ -36,10 +36,10 @@ const Header = () => {
                                     ?
 
                                     <>
-                                        <Nav.Link as={Link} to='/manageinventory'>Manage Item</Nav.Link>
-                                        <Nav.Link as={Link} to='/add'>Add Item</Nav.Link>
+                                        <Nav.Link as={Link} to='/manageinventory'>Manage</Nav.Link>
+                                        <Nav.Link as={Link} to='/add'>Add </Nav.Link>
 
-                                        <Nav.Link as={Link} to='/myitems'>My Items</Nav.Link>
+                                        <Nav.Link as={Link} to='/myitems'>My-Items</Nav.Link>
                                         <button onClick={handleSignOut} className='btn btn-link text-white text-decoration-none'>Sign Out</button>
                                     </>
                                     :

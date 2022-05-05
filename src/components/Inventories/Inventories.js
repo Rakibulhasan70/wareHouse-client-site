@@ -7,8 +7,8 @@ import './Inventories.css'
 const Inventories = () => {
     const [products, setProducts] = UseProducts()
     return (
-        <div className='container mt-5 mb-5'>
-            <h2 style={{ color: 'skyblue' }} className='text-center mb-4'> My Inventory</h2>
+        <div className='container mt-4 mb-5'>
+            <h2 style={{ color: 'IndianRed' }} className='text-center mb-4'> My Inventory</h2>
             <div className='products '>
                 {
                     products.slice(0, 6).map(inventory => <Inventory
