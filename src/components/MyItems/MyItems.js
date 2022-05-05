@@ -18,22 +18,22 @@ const MyItems = () => {
 
         const run = async () => {
             const url = `https://floating-bastion-64213.herokuapp.com/myItem/${email}`
-            // try {
-            await axios.get(url, {
-                headers: {
-                    authorization: `Bearer ${localStorage.getItem('accessToken')}`
-                }
-            })
-                .then(function (res) {
-                    setProduct(res.data)
+            try {
+                await axios.get(url, {
+                    headers: {
+                        authorization: `Bearer ${localStorage.getItem('accessToken')}`
+                    }
                 })
-            // }
-            // catch (error) {
-            //     console.log(error.message);
-            //     if (error.response.status === 401 || error.response.status === 403)
-            //         signOut(auth)
-            //     navigte('/login')
-            // }
+                    .then(function (res) {
+                        setProduct(res.data)
+                    })
+            }
+            catch (error) {
+                console.log(error.message);
+                if (error.response.status === 401 || error.response.status === 403)
+                    signOut(auth)
+                navigte('/login')
+            }
         }
         run()
     }, [email, products])

@@ -30,7 +30,7 @@ const Header = () => {
                         </Nav>
                         <Nav>
                             <Nav.Link as={Link} to="/blog">Blog</Nav.Link>
-                            <Nav.Link as={Link} to="/register">Register</Nav.Link>
+                            {/* <Nav.Link as={Link} to="/register">Register</Nav.Link> */}
                             {
                                 user
                                     ?
