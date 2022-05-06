@@ -10,11 +10,9 @@ const MyItems = () => {
     const email = user?.email
 
     const [products, setProduct] = useState([])
-    console.log(products);
     useEffect(() => {
 
         const run = async () => {
-            // try {
             await axios.get(`https://floating-bastion-64213.herokuapp.com/myItem/${email}`)
                 .then(function (res) {
                     setProduct(res.data)
