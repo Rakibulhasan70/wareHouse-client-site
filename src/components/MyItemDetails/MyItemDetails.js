@@ -29,10 +29,10 @@ const MyItemDetails = (props) => {
         <div className='myitemdetails container '>
             <div className='ps-2 mt-2 '>
                 <img className='w-50 mx-auto' src={picture} alt="" />
-                <p> Supplier Name: {supplierName ? supplierName : 'undefined'}</p>
-                <p>Quantity: {quantity ? quantity : 'undefined'}</p>
-                <p>Price: {price ? price : 'undefined'}</p>
-                <p><small>Description: {description ? description : 'undefined'}</small></p>
+                <p> Supplier Name: {supplierName ? supplierName : 'Not Found'}</p>
+                <p>Quantity: {quantity ? quantity : 'Not Found'}</p>
+                <p>Price: {price ? price : 'Not Found'}</p>
+                <p><small>Description: {description ? description : 'Not Found'}</small></p>
                 <button onClick={() => handleDeleteBtn(_id)} className='btn btn-danger mb-2'>Delete</button>
             </div>
         </div>

@@ -7,7 +7,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer, toast } from 'react-toastify';
 import Social from '../Social/Social';
 import Loading from '../Loading/Loading';
-import axios from 'axios';
 
 const Login = () => {
     const [email, setEmail] = useState('')
@@ -49,18 +48,16 @@ const Login = () => {
     const from = location.state?.from?.pathname || "/";
 
     if (user) {
-
+        navigate(from, { replace: true });
     }
 
 
 
-    const handleSubmitForm = async e => {
+    const handleSubmitForm = e => {
         e.preventDefault();
-        await signInWithEmailAndPassword(email, password)
-        const { data } = await axios.post('https://floating-bastion-64213.herokuapp.com/login', { email })
-        console.log(data);
-        localStorage.setItem('accessToken', data.accessToken);
-        navigate(from, { replace: true });
+        signInWithEmailAndPassword(email, password)
+
+
     };
 
     // reset password

@@ -1,15 +1,12 @@
 import axios from 'axios';
-import { signOut } from 'firebase/auth';
 import './MyItems.css'
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import MyItemDetails from '../MyItemDetails/MyItemDetails';
 
 const MyItems = () => {
     const [user] = useAuthState(auth)
-    const navigte = useNavigate()
     const email = user?.email
 
     const [products, setProduct] = useState([])
@@ -17,23 +14,12 @@ const MyItems = () => {
     useEffect(() => {
 
         const run = async () => {
-            const url = `https://floating-bastion-64213.herokuapp.com/myItem/${email}`
             // try {
-            await axios.get(url, {
-                headers: {
-                    authorization: `Bearer ${localStorage.getItem('accessToken')}`
-                }
-            })
+            await axios.get(`https://floating-bastion-64213.herokuapp.com/myItem/${email}`)
                 .then(function (res) {
                     setProduct(res.data)
                 })
-            // }
-            // catch (error) {
-            //     console.log(error.message);
-            //     if (error.response.status === 401 || error.response.status === 403)
-            //         signOut(auth)
-            //     navigte('/login')
-            // }
+
         }
         run()
     }, [email, products])
