@@ -6,7 +6,7 @@ const Offer = () => {
     const [products, setProducts] = UseProducts()
     return (
         <div className='container mb-5'>
-            <h2 style={{ color: 'purple' }} className='text-center pb-4'>Special Offer</h2>
+            <h2 style={{ color: 'purple' }} className='text-center pb-4'>EID Offer</h2>
             <div className='products '>
                 {
                     products.slice(0, 3).map(product => <OfferDetails
