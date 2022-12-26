@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 const UseProductDetails = productId => {
     const [products, setProducts] = useState([]);
     useEffect(() => {
-        const url = `https://floating-bastion-64213.herokuapp.com/product/${productId}`
+        const url = `https://warehouse-server-v9j4.onrender.com/product/${productId}`
         fetch(url)
             .then(res => res.json())
             .then(data => setProducts(data))

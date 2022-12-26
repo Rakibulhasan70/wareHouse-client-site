@@ -15,7 +15,7 @@ const ManageInventoryDetails = (props) => {
     const handleDeleteBtn = id => {
         const procced = window.confirm('Are you sure for delete ??')
         if (procced) {
-            const url = `https://floating-bastion-64213.herokuapp.com/myItem/${id}`
+            const url = `https://warehouse-server-v9j4.onrender.com/myItem/${id}`
             console.log(url);
             fetch(url, {
                 method: "DELETE"

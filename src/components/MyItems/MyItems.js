@@ -13,7 +13,7 @@ const MyItems = () => {
     useEffect(() => {
 
         const run = async () => {
-            await axios.get(`https://floating-bastion-64213.herokuapp.com/myItem/${email}`)
+            await axios.get(`https://warehouse-server-v9j4.onrender.com/myItem/${email}`)
                 .then(function (res) {
                     setProduct(res.data)
                 })

@@ -8,7 +8,6 @@ import auth from '../../firebase.init';
 
 const Add = () => {
     const [user] = useAuthState(auth)
-    console.log(user);
     const navigate = useNavigate()
     const email = user?.email
 
@@ -32,7 +31,7 @@ const Add = () => {
         const newProduct = {
             ...product, email: email
         }
-        await axios.post('https://floating-bastion-64213.herokuapp.com/addItem', newProduct)
+        await axios.post('https://warehouse-server-v9j4.onrender.com/addItem', newProduct)
             .then(function (res) {
                 if (res?.data?.insertedId) {
                     navigate('/myitems')
